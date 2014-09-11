@@ -19,9 +19,12 @@ ActiveRecord::Schema.define(version: 20140911210816) do
   create_table "comments", force: true do |t|
     t.string   "author"
     t.text     "body"
+    t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "comments", ["profile_id"], name: "index_comments_on_profile_id", using: :btree
 
   create_table "profiles", force: true do |t|
     t.date     "birthdate"

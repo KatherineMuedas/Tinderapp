@@ -23,15 +23,15 @@ Rails.application.routes.draw do
 
   get 'comments/new'
 
-  get 'profiles/create'
+  #get 'profiles/create'
 
-  get 'profiles/update'
+  #get 'profiles/update'
 
-  get 'profiles/destroy'
+  #get 'profiles/destroy'
 
-  get 'profiles/edit'
+  #get 'profiles/edit'
 
-  get 'profiles/new'
+  #get 'profiles/new'
 
   get 'users/create'
 
@@ -42,6 +42,9 @@ Rails.application.routes.draw do
   get 'users/edit'
 
   get 'users/new'
+
+  resources :profiles
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

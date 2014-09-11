@@ -1,0 +1,14 @@
+<h1>The Profiles:</h1>
+
+<% @profiles.each do |profile| %>
+	<h2><%= profile.about %></h2>
+
+	<%= link_to 'Edit profile', edit_profile_path(profile.id)%>
+	<%= link_to 'Destroy', profile_path(profile),
+	                    method: :delete, data: { confirm: 'Are you sure?' }%>
+
+	<hr>
+
+	<% end %>
+
+<%= link_to 'New Profile', new_profile_path %>
