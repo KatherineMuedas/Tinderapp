@@ -1,2 +1,8 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Edit User: <%= @user.name %></h1>
+
+<p>To edit this project, please make your changes on the form below:</p>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', @user %> 
+

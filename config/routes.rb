@@ -1,53 +1,13 @@
 Rails.application.routes.draw do
-  get 'tags/create'
 
-  get 'tags/update'
+  resources :login
 
-  get 'tags/destroy'
-
-  get 'tags/new'
-
-  get 'tags/edit'
-
-  get 'login/create'
-
-  get 'login/destroy'
-
-  get 'comments/create'
-
-  get 'comments/update'
-
-  get 'comments/destroy'
-
-  get 'comments/edit'
-
-  get 'comments/new'
-
-  get 'profiles/create'
-
-  get 'profiles/update'
-
-  get 'profiles/destroy'
-
-  get 'profiles/edit'
-
-  get 'profiles/new'
-
-  get 'users/create'
-
-  get 'users/update'
-
-  get 'users/destroy'
-
-  get 'users/edit'
-
-  get 'users/new'
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  resources :users do
+    resources :profiles do
+      resources :comments
+    end
+  end  
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
