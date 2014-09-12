@@ -1,2 +1,11 @@
-<h1>Profiles#new</h1>
-<p>Find me in app/views/profiles/new.html.erb</p>
+<h1> New Profile </h1>
+<%= form_for @profile do |f| %>
+<%= f.label :about %>
+<%= f.text_area :about %>
+<%= f.label :birthdate %>
+<%= f.date_field :birthdate %>
+<%= f.label :gender %>
+<%= f.select :gender, [['Female', true], ['Male', false]], 
+                                selected: false %>
+<%= f.submit %>
+<% end %>
