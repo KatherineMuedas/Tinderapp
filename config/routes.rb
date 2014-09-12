@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :login
+  get 'home/index'
 
-  resources :users do
-    resources :profiles do
-      resources :comments
-    end
-  end  
+  devise_for :users
+
+  get '/user', to: 'users#show', as: :user_show
+  resources :profiles do
+    resources :comments
+  end
   
   get 'tags/destroy'
 
@@ -14,10 +15,7 @@ Rails.application.routes.draw do
 
   get 'tags/edit'
 
-  get 'login/create'
-
-  get 'login/destroy'
-
+  root "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
